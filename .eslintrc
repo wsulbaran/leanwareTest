@@ -1,0 +1,67 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "array-bracket-spacing": [ "error", "always" ],
+    "arrow-spacing": [ "error", { "before": true, "after": true } ],
+    "brace-style": [ "error", "1tbs", { "allowSingleLine": true } ],
+    "comma-dangle": [ "error", "always-multiline" ],
+    "comma-spacing": [ "error", { "before": false, "after": true } ],
+    "indent": [ "error", 2 ],
+    "keyword-spacing": [ "error", { "before": true, "after": true } ],
+    // "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
+    // "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+    "no-multiple-empty-lines": [ "error", { "max": 1, "maxEOF": 1 } ],
+    "object-curly-spacing": [ "error", "always" ],
+    "padded-blocks": [ "error", { "blocks": "never", "classes": "always", "switches": "always" } ],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "always", "prev": [ "const", "let", "var" ], "next": "*" },
+      { "blankLine": "any", "prev": [ "const", "let", "var" ], "next": [ "const", "let", "var" ] },
+      { "blankLine": "always", "prev": "directive", "next": "*" },
+      { "blankLine": "any", "prev": "directive", "next": "directive" },
+      { "blankLine": "always", "prev": "*", "next": "if" },
+      { "blankLine": "always", "prev": "if", "next": "*" }
+    ],
+    "quote-props": [ "error", "consistent" ],
+    "quotes": [ "error", "single", { "allowTemplateLiterals": true, "avoidEscape": true } ],
+    "semi": [ "error", "always" ],
+    "space-before-blocks": [ "error", "always" ],
+    "space-in-parens": [ "error", "never" ],
+    "@typescript-eslint/no-explicit-any": [1, { "ignoreRestArgs": true }],
+    "@typescript-eslint/ban-types": [1 ,
+      {
+        "types": {
+          "String": false,
+          "Boolean": false,
+          "Number": false,
+          "Symbol": false,
+          "{}": false,
+          "Object": false,
+          "object": false,
+          "Function": false,
+          "any": false
+        },
+        "extendDefaults": true
+      }
+    ],
+    "@typescript-eslint/no-var-requires": [ 1 ],
+    "@typescript-eslint/explicit-module-boundary-types": [ 0 ],
+    "no-useless-escape": [ 1 ],
+    "@typescript-eslint/no-this-alias": [ 1 ],
+    "no-prototype-builtins": [ 1 ],
+    "no-async-promise-executor": [ 1 ],
+    "no-console": [ 1, { "allow": ["warn", "error"] } ],
+    "max-len": ["error", { "code": 120 }] ,
+  }
+  
+}
