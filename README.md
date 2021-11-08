@@ -26,7 +26,7 @@ Crear una copia del archivo que contiene las variables de conexion de DB y Puert
 **Como usar las Api**
 
 Primero se debe regitrar un usuario en la db. Luego iniciar sesion con el usuario registrado, al iniciar
-sesion retornara un token de autenticación. Agregar el token de autenticación en cada peticion de, **registrar proyectos, consultar proyectos, cargar reporte de dedicación,  consultar reporte de dedicación y actulizar**
+sesion retornara un token de autenticación. Agregar el token de autenticación en el header de  cada peticion ejemplo **Authorization : bearer token**, **registrar proyectos, consultar proyectos, cargar reporte de dedicación,  consultar reporte de dedicación y actulizar**
 
 **Registro de usuario**
 
