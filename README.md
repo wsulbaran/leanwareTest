@@ -5,21 +5,21 @@ Visión general simple del uso
 
 API que permite registrar reportes de dedicación semanales a proyectos. 
 ## Primeros Paso
-git clone https://github.com/wsulbaran/leanwareTest.git
+**git clone https://github.com/wsulbaran/leanwareTest.git**
 
 Version de Nodejs 14.*.*
 
 Previamente tener instalado MongoDB para el registro de datos.
 
-O Agregar en el enviroment el string de conexion de Mongo Atlas. 
+O Agregar en el enviroment, el string de conexion de Mongo Atlas. 
 ### Instalación
-Ir al repositorio clonado y ejecutar npm install --save
+Ir al repositorio clonado y ejecutar **npm install --save**
 
-Crear una copia del archivo que contiene las variables de conexion de DB y Puerto del api, cp .env.json.example .env.json
+Crear una copia del archivo que contiene las variables de conexion de DB y Puerto de la aplicacion, **cp .env.json.example .env.json**
 ### Ejecución
-npm run ts:watch
+**npm run ts:watch**
 
-npm run server
+**npm run server**
 
 ### APIS
 
