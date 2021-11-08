@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node ./build/app.js",
+    "build": "tsc",
     "server": "tsc && nodemon ./build/app.js",
     "ts:watch": "tsc -w",
     "eslint_dev": "eslint . --ext .ts"
