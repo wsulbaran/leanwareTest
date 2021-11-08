@@ -1,15 +1,17 @@
-# Api de consultas de reportes de dedicacion
+# Api de consultas de reportes de dedicación
 
 Visión general simple del uso
 ## Descripción
 
-API que permite registrar reportes de dedicacion semanales a proyectos. 
+API que permite registrar reportes de dedicación semanales a proyectos. 
 ## Primeros Paso
 git clone https://github.com/wsulbaran/leanwareTest.git
 
 Version de Nodejs 14.*.*
 
 Previamente tener instalado MongoDB para el registro de datos.
+
+O Agregar en el enviroment el string de conexion de Mongo Atlas. 
 ### Instalación
 Ir al repositorio clonado y ejecutar npm install --save
 
@@ -21,9 +23,15 @@ npm run server
 
 ### APIS
 
+**Como usar las Api**
+
+Primero se debe regitrar un usuario en la db. Luego iniciar sesion con el usuario registrado, al iniciar
+sesion retornara un token de autenticación. Agregar el token de autenticación en cada peticion de, **registrar proyectos, consultar proyectos, cargar reporte de dedicación,  consultar reporte de dedicación y actulizar**
+
 **Registro de usuario**
 
 **api** : /auth/signup
+
 **tipo**: POST
 
 **curl** : curl --request POST \
@@ -63,8 +71,8 @@ npm run server
   --url http://localhost:3000/auth/login \
   --header 'Content-Type: application/json' \
   --data '{	
-	"email": "wsulbaran@yopmail.com",
-	"password": "Batman23.."
+	"email": "admin@yopmail.com",
+	"password": "admin.."
 }'
 
 **response** : {
@@ -128,7 +136,7 @@ npm run server
   "message": "List Projects."
 }
 
-**Cargar dedicacion a proyecto**
+**Cargar dedicación a proyecto**
 
 **api**: /work/load
 
@@ -158,7 +166,7 @@ npm run server
   "message": "Work loads completed."
 }
 
-**Consultar Reportes de Dedicacion.**
+**Consultar Reportes de dedicación.**
 
 **api**: /work/reports?skip=1&limit=10
 
@@ -192,7 +200,7 @@ npm run server
   "message": "List reports."
 }
 
-**Actulizar Reporte de Dedicacion**
+**Actulizar Reporte de dedicación**
 
 **api**: /work/update-work-load/6186c9c488cfde0a5793b5ca
 
