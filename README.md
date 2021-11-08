@@ -4,7 +4,7 @@ Visión general simple del uso
 ## Descripción
 
 API que permite registrar reportes de dedicacion semanales a proyectos. 
-## Primero Paso
+## Primeros Paso
 git clone https://github.com/wsulbaran/leanwareTest.git
 
 Version de Nodejs 14.*.*
@@ -21,12 +21,12 @@ npm run server
 
 ### APIS
 
-Registro de usuario
+**Registro de usuario**
 
-api : /auth/signup
-tipo: POST
+**api** : /auth/signup
+**tipo**: POST
 
-curl --request POST \
+**curl** : curl --request POST \
   --url http://localhost:3000/auth/signup \
   --header 'Content-Type: application/json' \
   --data '{	
@@ -37,7 +37,7 @@ curl --request POST \
 	"typeUser": "0"
 }'
 
-response: {
+**response**: {
   "status": 200,
   "success": true,
   "data": {
@@ -53,12 +53,13 @@ response: {
   "message": "Registred completed"
 }
 
-Inicio de sesion
+**Inicio de sesion**
 
-api : /auth/login
-tipo: POST
+**api** : /auth/login
 
-curl --request POST \
+**tipo**: POST
+
+**curl**: curl --request POST \
   --url http://localhost:3000/auth/login \
   --header 'Content-Type: application/json' \
   --data '{	
@@ -66,16 +67,17 @@ curl --request POST \
 	"password": "Batman23.."
 }'
 
-response : {
+**response** : {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
 
-Crear Projecto
+**Crear Projecto**
 
-api : /project/create
-tipo: POST
+**api** : /project/create
 
-curl --request POST \
+**tipo**: POST
+
+**curl**: curl --request POST \
   --url http://localhost:3000/project/create \
   --header 'Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...' \
   --header 'Content-Type: application/json' \
@@ -83,7 +85,7 @@ curl --request POST \
 	"name":"DELL"
 }'
 
-response : {
+**response** : {
   "status": 200,
   "success": true,
   "data": {
@@ -95,18 +97,19 @@ response : {
   "message": "Project Created."
 }
 
-Consultar porjectos
+**Consultar porjectos**
 
-api : project/get-projects
-tipo: GET
+**api** : project/get-projects
 
-Parametro en query : skip y limi. ?skip=1&limit=1
+**tipo**: GET
 
-curl --request GET \
+**Parametro en query** : skip y limi. ?skip=1&limit=1
+
+**curl**: curl --request GET \
   --url 'http://localhost:3000/project/get-projects?skip=1&limit=1&=' \
   --header 'Authorization: bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'
 
-response : {
+**response** : {
   "status": 200,
   "success": true,
   "data": {
@@ -125,13 +128,13 @@ response : {
   "message": "List Projects."
 }
 
-Cargar dedicacion a pryecto
+**Cargar dedicacion a proyecto**
 
-api: /work/load
+**api**: /work/load
 
-tipo: POST
+**tipo**: POST
 
-curl --request POST \
+**curl**: curl --request POST \
   --url http://localhost:3000/work/load \
   --header 'Authorization: bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...' \
   --header 'Content-Type: application/json' \
@@ -140,7 +143,7 @@ curl --request POST \
 	"percentage": 10
 }'
 
-reponse: {
+**reponse**: {
   "status": 200,
   "success": true,
   "data": {
@@ -155,19 +158,19 @@ reponse: {
   "message": "Work loads completed."
 }
 
-Consultar Reportes de Dedicacion.
+**Consultar Reportes de Dedicacion.**
 
-api: /work/reports?skip=1&limit=10
+**api**: /work/reports?skip=1&limit=10
 
-tipo: GET
+**tipo**: GET
 
-Parametros de query: skip=1&limit=10
+**Parametros de query**: skip=1&limit=10
 
-curl --request GET \
+**curl**: curl --request GET \
   --url 'http://localhost:3000/work/reports?skip=1&limit=10' \
   --header 'Authorization: bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'
 
-response: {
+**response**: {
   "status": 200,
   "success": true,
   "data": {
@@ -189,13 +192,13 @@ response: {
   "message": "List reports."
 }
 
-Actulizar Reporte de Dedicacion
+**Actulizar Reporte de Dedicacion**
 
-api: /work/update-work-load/6186c9c488cfde0a5793b5ca
+**api**: /work/update-work-load/6186c9c488cfde0a5793b5ca
 
-tipo: PUT
+**tipo**: PUT
 
-curl --request PUT \
+**curl**: curl --request PUT \
   --url http://localhost:3000/work/update-work-load/6186c9c488cfde0a5793b5ca \
   --header 'Authorization: bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...' \
   --header 'Content-Type: application/json' \
@@ -203,7 +206,7 @@ curl --request PUT \
 	"percentage": 50
 }'
 
-response: {
+**response**: {
   "status": 200,
   "success": true,
   "data": {
@@ -219,4 +222,4 @@ response: {
 }
 ## Autor
 
-Wilfredo Sulbaran
+**Wilfredo Sulbaran**
