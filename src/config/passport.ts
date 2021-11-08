@@ -1,6 +1,7 @@
 import * as passport from 'passport';
 import { UserController } from '../controllers';
 import { Strategy as localStrategy } from 'passport-local';
+import { IUser } from '../model/User/IUser';
 const JWTStrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;
 
@@ -56,7 +57,18 @@ passport.use(new JWTStrategy({
 }, async (token, done) => {
   try {
     const expiredIn =  new Date(token.exp * 1000);
+    const user = (token.user) ? token.user : false;
 
+    if (!user) {
+      return done(null, false, { message: 'Wrong token' });
+    }
+
+    const getUser: IUser[] = await userController.getAllList({ _id: user._id }, {}, 0, 0); 
+
+    if (getUser.length == 0) {
+      return done(null, false, { message: 'Wrong token' });
+    }
+    
     if (expiredIn < new Date()) {
       done(null, false, { message: 'token expired' });
     }

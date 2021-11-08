@@ -45,7 +45,7 @@ export class AuthRouter {
             if (errlogin) return next(errlogin);
 
             const body: UserDTO = user;
-            const token = jwt.sign({ user: body }, 'secret', { expiresIn:'60000' });
+            const token = jwt.sign({ user: body }, 'secret', { expiresIn:'10m' });
 
             return res.json({ token });
           });
